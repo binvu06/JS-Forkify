@@ -40,7 +40,7 @@ export const loadRecipe = async function (id) {
       state.recipe.bookmarked = true;
     else state.recipe.bookmarked = false;
 
-    console.log(state.recipe);
+    // console.log(state.recipe);
   } catch (err) {
     // Temp error handling
     // console.error(`${err} 💣💣💣`);
@@ -95,7 +95,7 @@ const persistBookmarks = function () {
 export const addBookmark = function (recipe) {
   // Add bookmark
   state.bookmarks.push(recipe);
-  console.log(state.bookmarks);
+  // console.log(state.bookmarks);
 
   // Mark current recipe as bookmark
   if (recipe.id === state.recipe.id) state.recipe.bookmarked = true;
@@ -151,7 +151,7 @@ export const uploadRecipe = async function (newRecipe) {
       servings: +newRecipe.servings,
       ingredients,
     };
-    console.log(recipe);
+    // console.log(recipe);
 
     const data = await AJAX(`${API_URL}?key=${KEY}`, recipe);
     state.recipe = createRecipeObject(data);
